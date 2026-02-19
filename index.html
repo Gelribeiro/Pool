@@ -20,20 +20,22 @@ body{
 }
 
 /* IMAGEM PRINCIPAL */
+.hero{
+  position:relative;
+}
+
 .hero img{
   width:100%;
   display:block;
 }
 
-/* SEÇÃO DO BOTÃO — MAIS COLADO NA IMAGEM */
-.cta-section{
-  padding:5px 20px 40px; /* quase encostado na arte */
-  background:#0b0b15;
-}
-
-/* BOTÃO PULSANDO */
+/* BOTÃO POSICIONADO SOBRE O FINAL DA IMAGEM */
 .cta-btn{
-  display:inline-block;
+  position:absolute;
+  left:50%;
+  bottom:20px; /* altura onde ficava a linha azul */
+  transform:translateX(-50%);
+  
   padding:20px 35px;
   font-size:18px;
   font-weight:bold;
@@ -48,33 +50,30 @@ body{
 /* ANIMAÇÃO PULSO */
 @keyframes pulse{
   0%{
-    transform:scale(1);
+    transform:translateX(-50%) scale(1);
     box-shadow:0 0 0 0 rgba(255,0,170,0.7);
   }
   70%{
-    transform:scale(1.07);
+    transform:translateX(-50%) scale(1.07);
     box-shadow:0 0 0 22px rgba(255,0,170,0);
   }
   100%{
-    transform:scale(1);
+    transform:translateX(-50%) scale(1);
   }
 }
 
 .cta-btn:hover{
-  transform:scale(1.1);
+  transform:translateX(-50%) scale(1.1);
 }
 </style>
 </head>
 
 <body>
 
-<!-- IMAGEM COMPLETA -->
+<!-- HERO COM IMAGEM + BOTÃO NO LUGAR DA LINHA -->
 <section class="hero">
-  <img src="Flyerpool.png" alt="Poolio Token">
-</section>
 
-<!-- BOTÃO ABAIXO DA IMAGEM -->
-<section class="cta-section">
+  <img src="Flyerpool.png" alt="Poolio Token">
 
   <!-- 🔗 COLE AQUI SEU LINK DO WHATSAPP -->
   <a href="COLE_AQUI_SEU_LINK_WHATSAPP"
