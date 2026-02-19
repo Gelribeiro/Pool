@@ -10,128 +10,86 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
 }
 
 body{
-  background:url('Flyerpool.png') no-repeat center top;
+  background:#000;
+  color:#fff;
+}
+
+/* SEÇÃO DA ARTE */
+.hero{
+  background:url("Flyerpool.png") no-repeat center top;
   background-size:cover;
-  color:white;
-}
-
-.section{
-  padding:40px 20px;
   text-align:center;
-  background:rgba(0,0,20,0.85);
+  padding-top:78vh; /* posiciona botão abaixo da arte */
+  padding-bottom:40px;
 }
 
-/* Linha azul */
+/* linha azul */
 .blue-line{
+  width:90%;
   height:4px;
   background:#1e6bff;
-  width:90%;
-  margin:30px auto;
+  margin:0 auto 25px;
   border-radius:10px;
 }
 
-/* Botão principal */
+/* botão principal */
 .main-btn{
   display:block;
   width:90%;
   max-width:420px;
-  margin:40px auto 20px;
+  margin:0 auto 25px;
   padding:18px;
-  border-radius:15px;
+  border-radius:16px;
   background:linear-gradient(90deg,#7b00ff,#ff00aa);
-  color:white;
+  color:#fff;
   font-weight:bold;
   font-size:18px;
   text-decoration:none;
 }
 
-/* Contador */
+/* contador */
 .timer{
-  font-size:32px;
-  margin-top:20px;
+  font-size:34px;
+  margin-bottom:10px;
 }
 
-/* Texto vagas */
+/* texto vagas */
 .whitelist{
   color:#ff00aa;
   font-size:18px;
-  margin-bottom:40px;
 }
 
-/* Seção formulário */
-.form-section{
-  padding:40px 20px;
-  text-align:center;
+/* seção formulário */
+.form{
   background:#0c0c14;
+  text-align:center;
+  padding:50px 20px;
 }
 
-.form-section h2{
-  margin-bottom:20px;
-  font-size:24px;
+.form h2{
+  font-size:26px;
+  margin-bottom:25px;
 }
 
-input{
+/* input */
+.form input{
   width:90%;
   max-width:420px;
-  padding:15px;
-  border-radius:10px;
+  padding:16px;
+  border-radius:12px;
   border:none;
   margin-bottom:20px;
   font-size:16px;
 }
 
-.form-btn{
-  padding:14px 35px;
-  border-radius:10px;
+/* botão lista */
+.form button{
+  padding:14px 36px;
+  border-radius:12px;
   border:none;
   background:#7b00ff;
-  color:white;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<!-- PARTE DO FUNDO COM ARTE -->
-<div class="section">
-
-  <div class="blue-line"></div>
-
-  <a href="#" class="main-btn">
-    QUERO ACESSO ANTECIPADO
-  </a>
-
-  <div class="timer">
-    39d 10h 21m 35s
-  </div>
-
-  <div class="whitelist">
-    Restam apenas 300 vagas na whitelist
-  </div>
-
-</div>
-
-<!-- PARTE FORMULÁRIO -->
-<div class="form-section">
-
-  <h2>Garanta sua posição antes do lançamento oficial</h2>
-
-  <input type="email" placeholder="Seu melhor email">
-
-  <br>
-
-  <button class="form-btn">
-    Entrar na Lista
-  </button>
-
-</div>
-
-</body>
-</html>
+  color
