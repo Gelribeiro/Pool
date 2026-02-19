@@ -19,7 +19,7 @@ body{
   text-align:center;
 }
 
-/* IMAGEM PRINCIPAL */
+/* HERO */
 .hero{
   position:relative;
 }
@@ -29,53 +29,85 @@ body{
   display:block;
 }
 
-/* BOTÃO POSICIONADO SOBRE O FINAL DA IMAGEM */
+/* BOTÃO PRO */
 .cta-btn{
   position:absolute;
   left:50%;
-  bottom:20px; /* altura onde ficava a linha azul */
+  bottom:25px;
   transform:translateX(-50%);
   
-  padding:20px 35px;
+  padding:20px 38px;
   font-size:18px;
   font-weight:bold;
   color:#fff;
   text-decoration:none;
-  border-radius:15px;
+  border-radius:16px;
+
   background:linear-gradient(90deg,#7b00ff,#ff00aa);
-  animation:pulse 1.4s infinite;
-  transition:0.3s;
+
+  animation:
+    pulse 1.6s infinite,
+    glow 2.5s ease-in-out infinite,
+    vibrate 3s infinite;
 }
 
-/* ANIMAÇÃO PULSO */
+/* PULSO */
 @keyframes pulse{
-  0%{
-    transform:translateX(-50%) scale(1);
-    box-shadow:0 0 0 0 rgba(255,0,170,0.7);
+  0%{ transform:translateX(-50%) scale(1); }
+  50%{ transform:translateX(-50%) scale(1.06); }
+  100%{ transform:translateX(-50%) scale(1); }
+}
+
+/* BRILHO NEON */
+@keyframes glow{
+  0%,100%{
+    box-shadow:
+      0 0 8px #ff00aa,
+      0 0 18px #ff00aa,
+      0 0 30px #7b00ff;
   }
-  70%{
-    transform:translateX(-50%) scale(1.07);
-    box-shadow:0 0 0 22px rgba(255,0,170,0);
-  }
-  100%{
-    transform:translateX(-50%) scale(1);
+  50%{
+    box-shadow:
+      0 0 14px #ff00aa,
+      0 0 28px #ff00aa,
+      0 0 45px #7b00ff;
   }
 }
 
-.cta-btn:hover{
-  transform:translateX(-50%) scale(1.1);
+/* VIBRAÇÃO SUAVE */
+@keyframes vibrate{
+  0%,100%{ margin-left:0; }
+  25%{ margin-left:1px; }
+  75%{ margin-left:-1px; }
+}
+
+/* CONTADOR */
+.countdown{
+  background:#0b0b15;
+  padding:40px 20px 60px;
+}
+
+.timer{
+  font-size:34px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.label{
+  color:#ff00aa;
+  font-size:18px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO COM IMAGEM + BOTÃO NO LUGAR DA LINHA -->
+<!-- HERO -->
 <section class="hero">
 
   <img src="Flyerpool.png" alt="Poolio Token">
 
-  <!-- 🔗 COLE AQUI SEU LINK DO WHATSAPP -->
+  <!-- LINK WHATSAPP -->
   <a href="COLE_AQUI_SEU_LINK_WHATSAPP"
      class="cta-btn"
      target="_blank">
@@ -83,6 +115,40 @@ body{
   </a>
 
 </section>
+
+<!-- CONTADOR REAL -->
+<section class="countdown">
+
+  <div class="timer" id="timer">00d 00h 00m 00s</div>
+  <div class="label">Restam poucas vagas na whitelist</div>
+
+</section>
+
+<script>
+/* DATA DO LANÇAMENTO — ALTERE AQUI */
+const launchDate = new Date("2026-04-01T00:00:00").getTime();
+
+const timer = document.getElementById("timer");
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = launchDate - now;
+
+  if (diff <= 0) {
+    timer.innerHTML = "LANÇADO 🚀";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+  timer.innerHTML =
+    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+}, 1000);
+</script>
 
 </body>
 </html>
