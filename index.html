@@ -14,17 +14,59 @@
 }
 
 body {
-  background: url('Flyerpool.png') no-repeat center top / cover;
-  min-height: 100vh;
+  background: url('bg.jpg') no-repeat center center/cover;
   color: white;
+  text-align: center;
 }
 
-/* Camada escura pra dar contraste */
-.overlay {
-  background: rgba(0, 0, 20, 0.75);
-  min-height: 100vh;
+.container {
   padding: 40px 20px;
-  text-align: center;
+  background: rgba(0,0,20,0.85);
+}
+
+/* Título */
+h1 {
+  font-size: 48px;
+  letter-spacing: 4px;
+}
+
+/* Subtexto */
+.subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Moeda */
+.coin {
+  width: 260px;
+  margin: 40px auto;
+}
+
+/* Benefícios */
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.benefits div {
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Frase destaque */
+.highlight {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.highlight span {
+  color: #ffcc00;
+  font-weight: bold;
 }
 
 /* Linha azul */
@@ -36,32 +78,89 @@ body {
   border-radius: 10px;
 }
 
-/* Botão principal gradiente */
+/* Botão principal */
 .main-btn {
   background: linear-gradient(90deg, #7b00ff, #ff00aa);
   padding: 18px;
-  border-radius: 14px;
+  border-radius: 12px;
   font-weight: bold;
   text-decoration: none;
   display: block;
-  margin: 40px auto 20px;
+  margin: 30px auto;
   width: 90%;
-  max-width: 420px;
   color: white;
   font-size: 18px;
-  transition: 0.3s;
-}
-
-.main-btn:hover {
-  transform: scale(1.05);
 }
 
 /* Contador */
 .timer {
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 20px;
 }
 
-/* Texto vagas */
 .whitelist {
   color: #ff00aa;
+  margin-bottom: 40px;
+}
+
+/* Email */
+.form-section {
+  margin-top: 30px;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 90%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.form-btn {
+  background: #7b00ff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>POOLIO</h1>
+<p class="subtitle">
+Enquanto muitos tokens são lançados e depois buscam tração, o nosso nasce sustentado por uma comunidade global ativa e engajada.
+</p>
+
+<img src="coin.png" class="coin">
+
+<div class="benefits">
+  <div>✔ Airdrops e benefícios estratégicos para a comunidade</div>
+  <div>✔ Lançamento exclusivo para membros da Fase 01</div>
+  <div>✔ Valorização programada dentro do ecossistema</div>
+  <div>✔ Negociação em ambiente Web2 com liquidez interna</div>
+  <div>✔ Whitepaper liberado</div>
+</div>
+
+<div class="highlight">
+Tokens nascem vazios.<br>
+O nosso já nasce em <span>movimento.</span>
+</div>
+
+<div class="blue-line"></div>
+
+<a href="#" class="main-btn">
+QUERO ACESSO ANTECIPADO
+</a>
+
+<div class="timer">
+39d
