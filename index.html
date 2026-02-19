@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winner 77</title>
+<title>Poolio</title>
 
 <style>
 * {
@@ -14,88 +14,54 @@
 }
 
 body {
-  height: 100vh;
-  background: linear-gradient(to bottom, #0a0f2c, #000000);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background: url('Flyerpool.png') no-repeat center top / cover;
+  min-height: 100vh;
   color: white;
 }
 
-.container {
-  width: 90%;
-  max-width: 400px;
+/* Camada escura pra dar contraste */
+.overlay {
+  background: rgba(0, 0, 20, 0.75);
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 /* Linha azul */
 .blue-line {
-  width: 80px;
   height: 4px;
-  background: #00aaff;
-  margin: 0 auto 20px auto;
+  background: #0066ff;
+  margin: 30px auto;
+  width: 90%;
   border-radius: 10px;
 }
 
-/* Botão lilás */
-.main-button {
-  display: block;
-  width: 100%;
+/* Botão principal gradiente */
+.main-btn {
+  background: linear-gradient(90deg, #7b00ff, #ff00aa);
   padding: 18px;
-  background: #b400ff;
-  color: white;
-  font-size: 18px;
+  border-radius: 14px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 12px;
-  margin-top: 10px;
+  display: block;
+  margin: 40px auto 20px;
+  width: 90%;
+  max-width: 420px;
+  color: white;
+  font-size: 18px;
   transition: 0.3s;
-  animation: pulse 1.5s infinite;
 }
 
-.main-button:hover {
-  background: #d84dff;
+.main-btn:hover {
+  transform: scale(1.05);
 }
 
-/* Texto branco */
-.cta-text {
-  margin-top: 15px;
-  font-size: 15px;
-  opacity: 0.9;
+/* Contador */
+.timer {
+  font-size: 32px;
+  margin-top: 20px;
 }
 
-/* Animação pulsar */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(180, 0, 255, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 15px rgba(180, 0, 255, 0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <div class="blue-line"></div>
-
-  <a href="https://seulink.com" class="main-button">
-    QUERO PARTICIPAR AGORA
-  </a>
-
-  <p class="cta-text">
-    Garanta sua posição antes que as vagas acabem.
-  </p>
-
-</div>
-
-</body>
-</html>
+/* Texto vagas */
+.whitelist {
+  color: #ff00aa;
