@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pool Liquidity</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pool Liquidity</title><style>
 
 body{
 margin:0;
@@ -74,53 +69,75 @@ box-shadow:0 0 15px #ff00aa;
 /* SEÇÃO CONTADOR */
 
 .countdown{
-
 background:#050505;
 padding:50px 20px;
-
 }
 
 .timer{
-
 font-size:38px;
 margin-bottom:10px;
 letter-spacing:2px;
-
 }
 
 .texto{
-
 font-size:18px;
 color:#ff2bbf;
-
 }
 
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-
-<div class="cta">
+</style></head><body><section class="hero"><div class="cta">
 <a href="https://chat.whatsapp.com/EmHwSglTZ3tADQP0xiKKFr">
 🔥 GARANTIR ACESSO ANTECIPADO
 </a>
-</div>
+</div></section><section class="countdown"><div class="timer" id="timer">
+00d 00h 00m 00s
+</div><div class="texto">
+Restam apenas <span id="vagas">300</span> vagas na whitelist
+</div></section><script>
 
-</section>
+/* DATA FINAL DO CONTADOR (25 dias a partir do acesso) */
 
-<section class="countdown">
+const finalDate = new Date();
+finalDate.setDate(finalDate.getDate() + 25);
 
-<div class="timer" id="timer">
-25d 05h 16m 00s
-</div>
+function updateTimer(){
 
-<div class="texto">
-Restam apenas 300 vagas na whitelist
-</div>
+const now = new Date().getTime();
+const distance = finalDate - now;
 
-</section>
+if(distance <= 0){
+document.getElementById("timer").innerHTML = "Encerrado";
+return;
+}
 
-</body>
+let days = Math.floor(distance / (1000*60*60*24));
+let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+let seconds = Math.floor((distance % (1000*60)) / 1000);
+
+document.getElementById("timer").innerHTML =
+days+"d "+hours+"h "+minutes+"m "+seconds+"s";
+
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+/* CONTADOR DE VAGAS DECRESCENTE */
+
+let vagas = 300;
+
+function diminuirVagas(){
+
+if(vagas > 1){
+vagas--;
+document.getElementById("vagas").innerText = vagas;
+}
+
+}
+
+/* diminui vagas a cada 45 segundos */
+
+setInterval(diminuirVagas,45000);
+
+</script></body>
 </html>
