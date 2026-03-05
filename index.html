@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -20,7 +20,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 60px;
+    padding-bottom: 120px;
 }
 
 .cta-button {
@@ -48,27 +48,6 @@ body {
     font-size: 20px;
     color: #ff00c8;
 }
-
-.form-section {
-    padding: 60px 20px;
-}
-
-input {
-    padding: 15px;
-    width: 300px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 15px;
-}
-
-button.submit {
-    background: #7b00ff;
-    border: none;
-    padding: 15px 30px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
 </style>
 </head>
 
@@ -85,34 +64,27 @@ button.submit {
 <div class="vagas">Restam apenas <span id="spots">300</span> vagas na whitelist</div>
 </div>
 
-<div class="form-section">
-<h2>Garanta sua posição antes do lançamento oficial</h2>
-<input type="email" placeholder="Seu melhor email">
-<br>
-<a href="https://chat.whatsapp.com/EmHwSglTZ3tADQP0xiKKFr" target="_blank">
-<button class="submit">Entrar na Lista</button>
-</a>
-</div>
-
 <script>
 var countDownDate = new Date("Mar 30, 2026 23:59:59").getTime();
 
 var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+var now = new Date().getTime();
+var distance = countDownDate - now;
 
-  document.getElementById("countdown").innerHTML =
-  days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "Lançamento Encerrado";
-  }
+document.getElementById("countdown").innerHTML =
+days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("countdown").innerHTML = "Lançamento Encerrado";
+}
+
 }, 1000);
 </script>
 
