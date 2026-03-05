@@ -1,7 +1,21 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pool Liquidity</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pool Liquidity</title><!-- META PIXEL --><script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}
+(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '571259075933497');
+fbq('track', 'PageView');
+</script><style>
 
 body{
 margin:0;
@@ -69,23 +83,30 @@ box-shadow:0 0 15px #ff00aa;
 /* SEÇÃO CONTADOR */
 
 .countdown{
+
 background:#050505;
 padding:50px 20px;
+
 }
 
 .timer{
+
 font-size:38px;
 margin-bottom:10px;
 letter-spacing:2px;
+
 }
 
 .texto{
+
 font-size:18px;
 color:#ff2bbf;
+
 }
 
 </style></head><body><section class="hero"><div class="cta">
-<a href="https://chat.whatsapp.com/EmHwSglTZ3tADQP0xiKKFr">
+<a href="https://chat.whatsapp.com/EmHwSglTZ3tADQP0xiKKFr"
+onclick="fbq('track','Lead');">
 🔥 GARANTIR ACESSO ANTECIPADO
 </a>
 </div></section><section class="countdown"><div class="timer" id="timer">
@@ -94,7 +115,7 @@ color:#ff2bbf;
 Restam apenas <span id="vagas">300</span> vagas na whitelist
 </div></section><script>
 
-/* DATA FINAL DO CONTADOR (25 dias a partir do acesso) */
+/* CONTADOR REGRESSIVO */
 
 const finalDate = new Date();
 finalDate.setDate(finalDate.getDate() + 25);
@@ -122,9 +143,9 @@ days+"d "+hours+"h "+minutes+"m "+seconds+"s";
 setInterval(updateTimer,1000);
 updateTimer();
 
-/* CONTADOR DE VAGAS DECRESCENTE */
+/* CONTADOR DE VAGAS */
 
-let vagas = 300;
+let vagas = 97;
 
 function diminuirVagas(){
 
@@ -134,8 +155,6 @@ document.getElementById("vagas").innerText = vagas;
 }
 
 }
-
-/* diminui vagas a cada 45 segundos */
 
 setInterval(diminuirVagas,45000);
 
