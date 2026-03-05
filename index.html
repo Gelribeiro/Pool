@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly Pool</title>
+
+<title>Pool Liquidity</title>
 
 <style>
 
@@ -15,113 +16,83 @@ color:white;
 text-align:center;
 }
 
-/* FUNDO */
+/* HERO */
+
 .hero{
 background:url('Pool1.jpg') center/cover no-repeat;
-padding:60px 20px 120px 20px;
-position:relative;
-}
-
-/* LOGO */
-.logo{
-width:220px;
-margin:auto;
-display:block;
-}
-
-/* CAIXAS */
-.features{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-max-width:500px;
-margin:20px auto;
-}
-
-.feature-box{
-background:rgba(0,0,0,0.6);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:10px;
-padding:10px;
-font-size:14px;
-}
-
-/* WHITEPAPER */
-.whitepaper{
-background:#000;
-border-radius:8px;
-padding:12px;
-max-width:250px;
-margin:15px auto;
-border:1px solid rgba(255,255,255,0.2);
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+align-items:center;
+padding:40px 20px;
 }
 
 /* BOTÃO */
+
 .cta{
-margin-top:30px;
+margin-bottom:40px;
 }
 
 .cta a{
 display:inline-block;
-background:linear-gradient(90deg,#7a00ff,#ff00aa);
-padding:18px 35px;
-font-weight:bold;
+padding:18px 40px;
 font-size:20px;
+font-weight:bold;
 color:white;
-border-radius:10px;
 text-decoration:none;
-box-shadow:0 0 25px rgba(255,0,200,0.7);
+border-radius:40px;
+
+background:linear-gradient(90deg,#7a00ff,#ff00aa);
+
+box-shadow:0 0 20px rgba(255,0,200,0.8);
+
 animation:pulse 1.5s infinite;
 }
 
 /* EFEITO PULSANTE */
+
 @keyframes pulse{
+
 0%{
 transform:scale(1);
-box-shadow:0 0 10px #ff00aa;
+box-shadow:0 0 15px #ff00aa;
 }
+
 50%{
-transform:scale(1.08);
-box-shadow:0 0 30px #ff00aa;
+transform:scale(1.07);
+box-shadow:0 0 35px #ff00aa;
 }
+
 100%{
 transform:scale(1);
-box-shadow:0 0 10px #ff00aa;
-}
-}
-
-/* FRASE */
-.tagline{
-margin-top:40px;
-font-size:24px;
-font-weight:bold;
+box-shadow:0 0 15px #ff00aa;
 }
 
-.tagline span{
-color:#ffd500;
 }
 
-/* LINHA AZUL */
-.divider{
-height:3px;
-background:linear-gradient(90deg,transparent,#00aaff,transparent);
-margin-top:30px;
-}
+/* SEÇÃO CONTADOR */
 
-/* CONTADOR */
 .countdown{
-background:#0a0a0a;
-padding:40px 20px;
+
+background:#050505;
+padding:50px 20px;
+
 }
 
 .timer{
-font-size:40px;
+
+font-size:38px;
 margin-bottom:10px;
+letter-spacing:2px;
+
 }
 
-.vagas{
+.texto{
+
+font-size:18px;
 color:#ff2bbf;
-font-size:22px;
+
 }
 
 </style>
@@ -131,45 +102,21 @@ font-size:22px;
 
 <section class="hero">
 
-<img src="logo.png" class="logo">
-
-<div class="features">
-
-<div class="feature-box">✅ Airdrops e benefícios estratégicos para a comunidade</div>
-
-<div class="feature-box">✅ Lançamento exclusivo para membros da Fase 01</div>
-
-<div class="feature-box">✅ Valorização programada dentro do ecossistema</div>
-
-<div class="feature-box">✅ Negociação em ambiente Web2 com liquidez interna</div>
-
-</div>
-
-<div class="whitepaper">
-✅ Whitepaper liberado
-</div>
-
 <div class="cta">
 <a href="https://chat.whatsapp.com/EmHwSglTZ3tADQP0xiKKFr">
-QUERO ACESSO ANTECIPADO
+🔥 GARANTIR ACESSO ANTECIPADO
 </a>
 </div>
-
-<div class="tagline">
-O nosso já nasce <span>em movimento.</span>
-</div>
-
-<div class="divider"></div>
 
 </section>
 
 <section class="countdown">
 
-<div class="timer">
-25d 5h 16m 4s
+<div class="timer" id="timer">
+25d 05h 16m 00s
 </div>
 
-<div class="vagas">
+<div class="texto">
 Restam apenas 300 vagas na whitelist
 </div>
 
